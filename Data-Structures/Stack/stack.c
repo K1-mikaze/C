@@ -29,18 +29,6 @@ void printStack(Stack *s) {
   }
 }
 
-Node *searchNode(Stack *s, unsigned int PIB) {
-
-  Node *node = s->top;
-  while (node->next != NULL) {
-    if (node->PIB == PIB) {
-      break;
-    }
-    node = (Node *)node->next;
-  }
-  return node;
-}
-
 void push(Stack *s, char name) {
   Node *node = NodeAllocate();
   if (node == NULL) {
