@@ -27,6 +27,7 @@ void printStack(Stack *s) {
            node->name, node->position, node->size);
     node = (Node *)node->next;
   }
+  free(node);
 }
 
 void push(Stack *s, char name) {
@@ -45,6 +46,7 @@ void push(Stack *s, char name) {
     node->size = sizeof(Node);
     node->name = name;
     s->top = node;
+    free(node);
   }
 }
 
